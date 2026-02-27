@@ -25,22 +25,26 @@ body{
 .container{
     width:100%;
     max-width:900px;
-    padding:15px;
+    padding:10px;
     text-align:center;
 }
 
-h1{
-    margin-bottom:15px;
-    font-size:1.6rem;
+/* Banner superior */
+.banner-top img{
+    width:100%;
+    max-height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
 }
 
 /* Vídeo menor */
 .video-wrapper{
     position:relative;
     width:100%;
-    padding-bottom:40%; /* menor que 16:9 */
+    padding-bottom:38%;
     height:0;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .video-wrapper iframe{
@@ -52,10 +56,10 @@ h1{
     border-radius:10px;
 }
 
-/* Banner */
-.banner img{
+/* Banner inferior */
+.banner-bottom img{
     width:100%;
-    max-height:200px;
+    max-height:160px;
     object-fit:cover;
     border-radius:10px;
 }
@@ -89,15 +93,16 @@ h1{
 @media(max-width:768px){
     body{
         align-items:flex-start;
-        padding-top:20px;
+        padding-top:10px;
+    }
+
+    .banner-top img,
+    .banner-bottom img{
+        max-height:120px;
     }
 
     .video-wrapper{
         padding-bottom:45%;
-    }
-
-    .banner img{
-        max-height:160px;
     }
 }
 </style>
@@ -107,8 +112,12 @@ h1{
 
 <div class="container">
 
-    <h1>🔴 AO VIVO - Portal das Câmeras</h1>
+    <!-- Banner Superior -->
+    <div class="banner-top">
+        <img src="https://cdn.awsli.com.br/1709/1709016/arquivos/banner-maior-02-.jpg" alt="Banner Superior">
+    </div>
 
+    <!-- Vídeo -->
     <div class="video-wrapper">
         <iframe 
         src="https://www.youtube.com/embed/oBUvQyyyE8s?autoplay=1&mute=1&rel=0"
@@ -118,12 +127,14 @@ h1{
         </iframe>
     </div>
 
-    <div class="banner">
-        <img src="https://cdn.awsli.com.br/1709/1709016/arquivos/banner-maior.jpg" alt="Banner">
+    <!-- Banner Inferior -->
+    <div class="banner-bottom">
+        <img src="https://cdn.awsli.com.br/1709/1709016/arquivos/banner-maior.jpg" alt="Banner Inferior">
     </div>
 
 </div>
 
+<!-- Botão WhatsApp -->
 <a href="https://api.whatsapp.com/send?phone=5511948545646&text=Ol%C3%A1%20Seja%20Bem%20Vindo%20portaldascameras.com.br" 
    class="whatsapp-float" 
    target="_blank">
