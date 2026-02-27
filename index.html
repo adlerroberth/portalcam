@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live YouTube - Portal das Câmeras</title>
+<title>Live - Portal das Câmeras</title>
 
 <style>
 *{
@@ -19,27 +19,28 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    height:100vh;
 }
 
 .container{
     width:100%;
-    max-width:1000px;
-    padding:20px;
+    max-width:900px;
+    padding:15px;
     text-align:center;
 }
 
 h1{
-    margin-bottom:20px;
-    font-size:2rem;
+    margin-bottom:15px;
+    font-size:1.6rem;
 }
 
+/* Vídeo menor */
 .video-wrapper{
     position:relative;
     width:100%;
-    padding-bottom:56.25%;
+    padding-bottom:40%; /* menor que 16:9 */
     height:0;
-    margin-bottom:30px;
+    margin-bottom:15px;
 }
 
 .video-wrapper iframe{
@@ -54,18 +55,19 @@ h1{
 /* Banner */
 .banner img{
     width:100%;
-    height:auto;
+    max-height:200px;
+    object-fit:cover;
     border-radius:10px;
 }
 
-/* Botão WhatsApp Flutuante */
+/* WhatsApp */
 .whatsapp-float{
     position:fixed;
-    width:60px;
-    height:60px;
-    bottom:25px;
-    right:25px;
-    background-color:#25d366;
+    width:55px;
+    height:55px;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
     border-radius:50%;
     display:flex;
     justify-content:center;
@@ -80,13 +82,22 @@ h1{
 }
 
 .whatsapp-float img{
-    width:35px;
-    height:35px;
+    width:30px;
 }
 
+/* Mobile */
 @media(max-width:768px){
-    h1{
-        font-size:1.5rem;
+    body{
+        align-items:flex-start;
+        padding-top:20px;
+    }
+
+    .video-wrapper{
+        padding-bottom:45%;
+    }
+
+    .banner img{
+        max-height:160px;
     }
 }
 </style>
@@ -101,20 +112,18 @@ h1{
     <div class="video-wrapper">
         <iframe 
         src="https://www.youtube.com/embed/oBUvQyyyE8s?autoplay=1&mute=1&rel=0"
-        title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="autoplay; encrypted-media"
         allowfullscreen>
         </iframe>
     </div>
 
     <div class="banner">
-        <img src="https://mminfoseg.com.br/wp-content/uploads/2025/05/BANNER-CFTV-1536x461.png" alt="Banner CFTV">
+        <img src="https://cdn.awsli.com.br/1709/1709016/arquivos/banner-maior.jpg" alt="Banner">
     </div>
 
 </div>
 
-<!-- Botão WhatsApp -->
 <a href="https://api.whatsapp.com/send?phone=5511948545646&text=Ol%C3%A1%20Seja%20Bem%20Vindo%20portaldascameras.com.br" 
    class="whatsapp-float" 
    target="_blank">
